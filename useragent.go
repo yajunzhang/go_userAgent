@@ -8,7 +8,7 @@ import (
 
 var cachePath string = "./.cache/"
 var cache []map[int]string
-var fileConf = []string{"Chrome", "Safari", "Opera", /* "Android+Webkit+Browser"*/}
+var fileConf = []string{"Chrome", "Safari", "Opera", "Firefox", /* "Android+Webkit+Browser"*/}
 
 func init(){
 	// 创建缓存目录
