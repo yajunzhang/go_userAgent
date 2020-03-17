@@ -40,9 +40,9 @@ func Get(name string){
 
 func write(name string, content []byte){
 	f, err := os.OpenFile(cachePath+name, os.O_WRONLY|os.O_TRUNC|os.O_CREATE, 0600)
-    defer f.Close()
-    if err != nil {
-        fmt.Println(err.Error())
+	defer f.Close()
+	if err != nil {
+		fmt.Println(err.Error())
 	} 
 	f.Write(content)
 }
@@ -54,17 +54,11 @@ func Read(name string) []string {
 	}
 
 	m := make([]string, 0)
-    err = json.Unmarshal(bytes, &m)
-    if err != nil {
-        fmt.Println("Umarshal failed:", err)
-        return nil
+	err = json.Unmarshal(bytes, &m)
+	if err != nil {
+		fmt.Println("Umarshal failed:", err)
+		return nil
 	}
 	
 	return m
 }
-
-
-// func main(){
-// 	utils := NewUtils()
-// 	utils.get("Safari")
-// }
